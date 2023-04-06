@@ -1,38 +1,139 @@
-.App {
+/* ------リセット------ */
+body,
+h1,
+div,
+time,
+p,
+input,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------スタイル------ */
+
+/* 全体・共通 */
+body {
+  background: #b0d8d2;
+  max-width: 500px;
+  padding: 20px 15px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+  color: #f2eae3;
+  text-stroke: 1px #006666;
+  -webkit-text-stroke: 1px #006666;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chat-area {
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 30px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chat {
   display: flex;
-  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.chat_info {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.chat_name {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat_text {
+  max-width: 280px;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 25px;
+}
+
+.chat_icon {
+  background-color: gray;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* 自分・チャット履歴 */
+
+.my-chat_text {
+  background: #f2eae3;
+  position: relative;
+}
+
+.my-chat_text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  border: 25px solid transparent;
+  border-top: 30px solid #f2eae3;
+  transform: rotate(-90deg);
+}
+
+/* 相手・チャット履歴 */
+
+.other-chat {
+  flex-direction: row-reverse;
+}
+
+.other-chat_info {
+  color: #006666;
+  flex-direction: row-reverse;
+}
+
+.other-chat_text {
+  background-color: #006666;
+  color: #fff;
+  position: relative;
+}
+
+.other-chat_text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+  border: 25px solid transparent;
+  border-top: 30px solid #006666;
+  transform: rotate(90deg);
+}
+
+/* 入力欄 */
+.input-chat {
+  display: flex;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  background: #f2eae3;
+  border-radius: 8px;
+  border: none;
+  width: 320px;
+  height: 35px;
+  padding: 0 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-chat_btn {
+  height: 35px;
+  width: 35px;
 }

@@ -1,5 +1,11 @@
 import React from "react";
+import { SignOut } from "./SignOut";
 
 export const Chat = () => {
-  return <div>Chat画面です</div>;
+  return (
+    <>
+      {/* インポートを入れ込む */}
+      <SignOut />
+    </>
+  );
 };

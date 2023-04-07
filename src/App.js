@@ -5,6 +5,6 @@ import { auth } from "./firebase";
 import { Chat } from "./components/Chat";
 
 export const App = () => {
-  const user = useAuthState(auth);
+  const [user] = useAuthState(auth);
   return <>{user ? <Chat /> : <SignIn />}</>;
 };

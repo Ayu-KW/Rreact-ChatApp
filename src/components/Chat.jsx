@@ -20,7 +20,8 @@ export const Chat = () => {
       <SignOut />
       <div className="msgs">
         {messages.map(({ id, text, photoURL, uid }) => (
-          <div key={id}>
+          // 三項演算子を使ってログインしているユーザーであれば「send」、していなければ「received」を追加する
+          <div key={id} className={`msg $(uid===auth.currentUser.uid ? "send" : "received")`}>
             <img src={photoURL} alt="" />
             <p>{text}</p>
           </div>

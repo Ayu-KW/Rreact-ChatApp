@@ -4,10 +4,17 @@ h1,
 div,
 time,
 p,
-input,
-button {
+input {
   margin: 0;
   padding: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
 }
 
 /* ------スタイル------ */
@@ -15,24 +22,50 @@ button {
 /* 全体・共通 */
 body {
   background: #b0d8d2;
-  max-width: 500px;
-  padding: 20px 15px;
+  max-width: 550px;
 }
 
-h1 {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #006666;
+  padding: 10px 15px;
+  color: #f2eae3;
+}
+
+.header-title {
   font-weight: bold;
   font-size: 30px;
-  color: #f2eae3;
-  text-stroke: 1px #006666;
-  -webkit-text-stroke: 1px #006666;
   text-align: center;
+}
+
+.header-profile {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.header-profile_user-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-profile_user-name {
+  font-size: 12px;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-area {
   height: auto;
   max-height: 400px;
   overflow-y: auto;
-  margin: 30px 0;
+  margin: 30px 15px;
 }
 
 .chat {
@@ -66,10 +99,10 @@ h1 {
 }
 
 .chat_icon {
-  background-color: gray;
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 /* 自分・チャット履歴 */
@@ -124,16 +157,16 @@ h1 {
   text-align: center;
 }
 
-input {
+.input-text {
   background: #f2eae3;
   border-radius: 8px;
   border: none;
-  width: 320px;
+  width: 80vh;
   height: 35px;
   padding: 0 10px;
 }
 
-.input-chat_btn {
+.input-btn img {
   height: 35px;
   width: 35px;
 }
